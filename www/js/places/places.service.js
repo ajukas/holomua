@@ -1,6 +1,6 @@
 angular.module('holomua.services')
 
-  .service('PlacesService', function ($q, $http, $cordovaGeolocation, HttpConstants) {
+  .service('PlacesService', function ($q, $http, $cordovaGeolocation, PlacesConstants, HttpConstants) {
 
     var _currLocation = {
       lat: 0,
@@ -27,10 +27,11 @@ angular.module('holomua.services')
       var deferred = $q.defer();
       self.getCurrentPosition().then(function(position){
         //Setting Location to Santa Fé do Sul
-        // position.lat = '-20.208284';
-        // position.long = '-50.9301757';
-        $http.get(HttpConstants.LOCATION_API+'?latlng='+position.lat+','+position.long+'&result_type=administrative_area_level_2&key='+HttpConstants.GOOGLE_API_KEY)
+        position.lat = '-20.2150505';
+        position.long = '-50.9242912';
+        $http.get(HttpConstants.LOCATION_API+'/geocode/json?latlng='+position.lat+','+position.long+'&result_type=administrative_area_level_2&key='+HttpConstants.GOOGLE_API_KEY)
           .then(function(success){
+            console.log(success.data);
             _currCity = success.data.results[0].formatted_address;
             deferred.resolve(_currCity);
           }, function(err){
@@ -39,6 +40,22 @@ angular.module('holomua.services')
       }, function(err){
         deferred.reject(err);
       });
+      return deferred.promise;
+    };
+
+    self.getNearbyPlaces = function() {
+      var deferred = $q.defer();
+      if (_currLocation.lat !== 0 && _currLocation.long !== 0){
+        $http.get(HttpConstants.LOCATION_API+'/place/nearbysearch/json?location='+_currLocation.lat+','+_currLocation.long+'&radius='+PlacesConstants.SEARCH_RADIUS+'&key='+HttpConstants.GOOGLE_API_KEY)
+          .then(function(success){
+            console.log(success);
+            deferred.resolve(success.data.results);
+          }, function(err){
+            deferred.reject(err);
+          });
+      } else {
+        deferred.reject('missing_location');
+      }
       return deferred.promise;
     };
   });

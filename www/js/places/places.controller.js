@@ -6,6 +6,7 @@ angular.module('holomua.controllers')
     $scope.init = function(){
       PlacesService.getCurrentCity().then(function(city){
         $scope.currentCity = city;
+        PlacesService.getNearbyPlaces();
       }, function(err){
         console.log(err);
       });

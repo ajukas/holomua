@@ -3,13 +3,16 @@ angular.module('underscore', [])
   return window._; // assumes underscore has already been loaded on the page
 });
 
+angular.module('holomua.controllers', []);
+angular.module('holomua.services', []);
+
 angular.module('holomua', [
-  ionic',
+  'ionic',
   'ngCordova',
   'holomua.controllers',
   'holomua.services',
-  'underscore',
-  'holomua.common.constants'
+  'holomua.common.constants',
+  'underscore'
 ])
 
 .run(function($ionicPlatform) {

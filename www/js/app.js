@@ -1,15 +1,15 @@
-
 angular.module('underscore', [])
 .factory('_', function() {
   return window._; // assumes underscore has already been loaded on the page
 });
 
-angular.module('starter', [
-  'ionic',
+angular.module('holomua', [
+  ionic',
   'ngCordova',
-  'starter.controllers',
-  'starter.services',
-  'underscore'
+  'holomua.controllers',
+  'holomua.services',
+  'underscore',
+  'holomua.common.constants'
 ])
 
 .run(function($ionicPlatform) {
@@ -17,7 +17,7 @@ angular.module('starter', [
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
     if (window.StatusBar) {
-    
+
       StatusBar.styleBlackTranslucent();
       StatusBar.backgroundColorByHexString("#ff0066");
       // org.apache.cordova.statusbar required
@@ -31,6 +31,8 @@ angular.module('starter', [
 })
 
 .config(function($stateProvider, $urlRouterProvider) {
+
+  $ionicConfigProvider.tabs.position('top');
 
   // Ionic uses AngularUI Router which uses the concept of states
   // Learn more here: https://github.com/angular-ui/ui-router
@@ -46,47 +48,46 @@ angular.module('starter', [
   })
 
   // Each tab has its own nav history stack:
-
-  .state('tab.dash', {
-    url: '/dash',
+  .state('tab.places', {
+    url: '/places',
     views: {
-      'tab-dash': {
-        templateUrl: 'templates/tab-dash.html',
-        controller: 'DashCtrl'
+      'tab-places': {
+        templateUrl: 'templates/places.html',
+        controller: 'PlacesCtrl'
       }
     }
   })
 
   .state('tab.chats', {
-    url: '/chats',
-    views: {
-      'tab-chats': {
-        templateUrl: 'templates/tab-chats.html',
-        controller: 'ChatsCtrl'
+      url: '/chats',
+      views: {
+        'tab-chats': {
+          templateUrl: 'templates/tab-chats.html',
+          controller: 'ChatsCtrl'
+        }
       }
-    }
-  })
-  .state('tab.chat-detail', {
-    url: '/chats/:chatId',
-    views: {
-      'tab-chats': {
-        templateUrl: 'templates/chat-detail.html',
-        controller: 'ChatDetailCtrl'
+    })
+    .state('tab.chat-detail', {
+      url: '/chats/:chatId',
+      views: {
+        'tab-chats': {
+          templateUrl: 'templates/chat-detail.html',
+          controller: 'ChatDetailCtrl'
+        }
       }
-    }
-  })
+    })
 
   .state('tab.account', {
     url: '/account',
     views: {
       'tab-account': {
-        templateUrl: 'templates/tab-account.html',
+        templateUrl: 'templates/account.html',
         controller: 'AccountCtrl'
       }
     }
   });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/dash');
+  $urlRouterProvider.otherwise('/tab/places');
 
 });

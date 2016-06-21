@@ -22,14 +22,18 @@ angular.module('holomua', [
     }
     if (window.StatusBar) {
       // org.apache.cordova.statusbar required
-      StatusBar.styleDefault();
+      StatusBar.styleBlackTranslucent();
+      StatusBar.backgroundColorByHexString("#ff0066");
+      //StatusBar.styleDefault();
     }
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
+.config(function($ionicConfigProvider) {
+  $ionicConfigProvider.scrolling.jsScrolling(false);
+})
 
-  $ionicConfigProvider.tabs.position('top');
+.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
 
   // Ionic uses AngularUI Router which uses the concept of states
   // Learn more here: https://github.com/angular-ui/ui-router
@@ -38,33 +42,15 @@ angular.module('holomua', [
   $stateProvider
 
   // setup an abstract state for the tabs directive
-  .state('tab', {
-    url: '/tab',
-    abstract: true,
-    templateUrl: 'templates/tabs.html'
+
+  .state('home', {
+    url: '/home',
+    templateUrl: 'templates/places.html',
+    controller: 'PlacesCtrl'
   })
 
-  // Each tab has its own nav history stack:
-  .state('tab.places', {
-    url: '/places',
-    views: {
-      'tab-places': {
-        templateUrl: 'templates/places.html',
-        controller: 'PlacesCtrl'
-      }
-    }
-  })
-  .state('tab.account', {
-    url: '/account',
-    views: {
-      'tab-account': {
-        templateUrl: 'templates/account.html',
-        controller: 'AccountCtrl'
-      }
-    }
-  });
 
-  // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/places');
+// if none of the above states are matched, use this as the fallback
+$urlRouterProvider.otherwise('/home');
 
 });

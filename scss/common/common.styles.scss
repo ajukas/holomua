@@ -41,10 +41,6 @@
   padding: 6px 3px 6px 3px;
 }
 
-.button-stable:activated, .button-stable:active {
-  background: darken($stable, 0.2);
-}
-
 .button.button-light.activated, .button.button-light.active {
   background: darken($light, 4%) !important;
 }

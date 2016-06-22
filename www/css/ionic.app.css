@@ -9848,8 +9848,5 @@ a.button {
 .col {
   padding: 6px 3px 6px 3px; }
 
-.button-stable:activated, .button-stable:active {
-  background: #f7f7f7; }
-
 .button.button-light.activated, .button.button-light.active {
   background: #7a4975 !important; }

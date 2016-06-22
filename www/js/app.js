@@ -22,8 +22,8 @@ angular.module('holomua', [
     }
     if (window.StatusBar) {
       // org.apache.cordova.statusbar required
-      StatusBar.styleBlackTranslucent();
-      StatusBar.backgroundColorByHexString("#444444");
+      StatusBar.overlaysWebView(true);
+      StatusBar.backgroundColorByHexString("#8B7C92");
       //StatusBar.styleDefault();
     }
   });

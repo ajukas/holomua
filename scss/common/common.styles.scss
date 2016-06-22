@@ -10,7 +10,7 @@
 .bar-search{
   padding-top: 20px;
   padding-bottom: 20px !important;
-  height: 60px !important;
+  //height: 60px !important;
 }
 
 .search .icon.placeholder-icon {
@@ -21,4 +21,12 @@
   border-radius: 1px !important;
   min-height: 120px;
   width: 100%;
+}
+
+.row {
+  padding: 0px 8px 0px 8px;
+}
+
+.col {
+  padding: 6px 3px 6px 3px;
 }

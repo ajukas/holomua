@@ -1,28 +1,61 @@
-<ion-view view-title="Places" hide-nav-bar="true">
-  <ion-content class="padding" ng-init="init()">
-    <h2>Bem vindo, você está em {{currentCity}}</h2>
+<ion-view view-title="Places" hide-nav-bar="true" class="metro-bg">
 
-    <div class="tile-group no-margin no-padding" style="width: 100%">
-      <div class="tile tile-square bg-lightBlue fg-white" data-role="tile">
-        <div class="tile-content iconic">
-          <span class="icon mif-windows"></span>
-        </div>
+  <ion-content scroll="true" ng-init="init()">
+    <div class="bar bar-header bar-royal item-input-inset bar-search">
+      <label class="item-input-wrapper search">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input class="search-text" type="search" placeholder="Encontre lugares: pizzaria imobiliária"/>
+      </label>
+    </div>
+    <div class="row row-center">
+      <div class="col">
+        <button class="button button-stable button-metro">
+
+        </button>
       </div>
-      <div class="tile bg-orange fg-white" data-role="tile">
-        <div class="tile-content iconic">
-          <span class="icon mif-music"></span>
-        </div>
-      </div>
-      <div class="tile tile-small bg-teal fg-white" data-role="tile">
-        <div class="tile-content iconic">
-          <span class="icon mif-facebook"></span>
-        </div>
-      </div>
-      <div class="tile tile-small bg-green fg-white" data-role="tile">
-        <div class="tile-content iconic">
-          <span class="icon mif-twitter"></span>
-        </div>
+      <div class="col">
+        <button class="button button-positive button-metro">
+
+        </button>
       </div>
     </div>
+    <div class="row row-center">
+      <div class="col">
+        <button class="button button-energized button-metro">
+
+        </button>
+      </div>
+      <div class="col">
+        <button class="button button-balanced button-metro">
+
+        </button>
+      </div>
+    </div>
+    <div class="row row-center">
+      <div class="col">
+        <button class="button button-positive button-metro">
+
+        </button>
+      </div>
+      <div class="col">
+        <button class="button button-calm button-metro">
+
+        </button>
+      </div>
+    </div>
+    <div class="row row-center">
+      <div class="col">
+        <button class="button button-balanced button-metro">
+
+        </button>
+      </div>
+      <div class="col">
+        <button class="button button-positive button-metro">
+
+        </button>
+      </div>
+    </div>
+
+
   </ion-content>
 </ion-view>

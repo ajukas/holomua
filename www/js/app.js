@@ -23,7 +23,7 @@ angular.module('holomua', [
     if (window.StatusBar) {
       // org.apache.cordova.statusbar required
       StatusBar.styleBlackTranslucent();
-      StatusBar.backgroundColorByHexString("#ff0066");
+      StatusBar.backgroundColorByHexString("#444444");
       //StatusBar.styleDefault();
     }
   });

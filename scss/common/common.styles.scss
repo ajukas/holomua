@@ -19,7 +19,8 @@
 
 .button-metro {
   border-radius: 1px !important;
-  min-height: 110px;
+  min-height: $button-size;
+  max-height: $button-size;
   width: 100%;
 }
 
@@ -43,4 +44,17 @@
 
 .button.button-light.activated, .button.button-light.active {
   background: darken($light, 4%) !important;
+}
+
+.button {
+  padding: 0;
+}
+
+.button-text-center {
+  height: $button-size;
+  line-height: $button-size;
+  /*font-weight: 900;*/
+  border: 0;
+  font-size: 24px;
+  background: rgba(0,0,0,.3);
 }

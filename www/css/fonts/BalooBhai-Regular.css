@@ -1,0 +1,11 @@
+@font-face {
+  font-family: 'BalooBhai-Regular';
+  src: url('./baloo-bhai/BalooBhai-Regular.eot');
+  src: url('./baloo-bhai/BalooBhai-Regular.woff2') format('woff2'),
+       url('./baloo-bhai/BalooBhai-Regular.woff') format('woff'),
+       url('./baloo-bhai/BalooBhai-Regular.ttf') format('truetype'),
+       url('./baloo-bhai/BalooBhai-Regular.svg#BalooBhai-Regular') format('svg'),
+       url('./baloo-bhai/BalooBhai-Regular.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}

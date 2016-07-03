@@ -3,6 +3,8 @@ angular.module('holomua.controllers')
 
     $scope.currentCity = '';
 
+    $scope.searching = false;
+
     $scope.init = function(){
       PlacesService.getCurrentCity().then(function(city){
         $scope.currentCity = city;

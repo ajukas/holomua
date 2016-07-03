@@ -3,72 +3,77 @@
   <div class="bar bar-header bar-royal item-input-inset bar-search">
     <label class="item-input-wrapper search">
       <i class="icon ion-search placeholder-icon"></i>
-      <input class="search-text" type="search" placeholder="Encontre lugares: pizzaria imobiliária"/>
+      <input
+        class="search-text"
+        ng-click="searching = true"
+        ng-blur="searching = false"
+        type="search"
+        placeholder="Encontre lugares: pizzaria imobiliária"/>
     </label>
   </div>
   <ion-content ng-init="init()">
     <div style="padding-top: 60px;">
 
-    </div>
-    <div class="row ">
-      <div class="col">
-        <button class="button button-balanced button-metro">
+      <div ng-show="!searching">
 
-        </button>
+        <div class="row">
+          <div class="col">
+            <div class="button button-balanced button-metro" style="background-image: url('img/bg_pizza.png');  background-position: center;">
+                <p class="button-text-center">Pizzarias</p>
+            </div>
+          </div>
+
+        </div>
+      <div class="row ">
+        <div class="col">
+          <button class="button button-calm button-metro">
+
+          </button>
+        </div>
+
+        <div class="col">
+          <button class="button button-stable button-metro">
+
+          </button>
+        </div>
       </div>
+      <div class="row ">
+        <div class="col">
+          <button class="button button-light button-metro">
 
+          </button>
+        </div>
+        <div class="col">
+          <button class="button button-balanced button-metro">
+
+          </button>
+        </div>
+      </div>
+      <div class="row ">
+        <div class="col">
+          <button class="button button-assertive button-metro">
+
+          </button>
+        </div>
+        <div class="col">
+          <button class="button button-energized button-metro">
+
+          </button>
+        </div>
+        <div class="col">
+          <button class="button button-positive button-metro">
+
+          </button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <button class="button button-stable button-metro">
+
+          </button>
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="row ">
-    <div class="col">
-      <button class="button button-calm button-metro">
 
-      </button>
-    </div>
-
-    <div class="col">
-      <button class="button button-stable button-metro">
-
-      </button>
-    </div>
-  </div>
-  <div class="row ">
-    <div class="col">
-      <button class="button button-light button-metro">
-
-      </button>
-    </div>
-    <div class="col">
-      <button class="button button-balanced button-metro">
-
-      </button>
-    </div>
-  </div>
-  <div class="row ">
-    <div class="col">
-      <button class="button button-assertive button-metro">
-
-      </button>
-    </div>
-    <div class="col">
-      <button class="button button-energized button-metro">
-
-      </button>
-    </div>
-    <div class="col">
-      <button class="button button-positive button-metro">
-
-      </button>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col">
-      <button class="button button-stable button-metro">
-
-      </button>
-    </div>
-  </div>
-
-
-</ion-content>
+  </ion-content>
 </ion-view>

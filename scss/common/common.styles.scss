@@ -54,6 +54,9 @@
   height: $button-size;
   line-height: $button-size;
   /*font-weight: 900;*/
+  background-repeat: no-repeat;
+  display:block;
+  box-shadow: 0 3px 10px #555;
   border: 0;
   font-size: 24px;
   background: rgba(0,0,0,.3);

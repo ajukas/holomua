@@ -9853,9 +9853,10 @@ a.button {
   background: #7a4975 !important; }
 
 .button {
-  padding: 0; }
+  padding: 0;
+  border: 0; }
 
-.button-text-center {
+.label-text-center {
   height: 110px;
   line-height: 110px;
   /*font-weight: 900;*/
@@ -9863,5 +9864,12 @@ a.button {
   display: block;
   box-shadow: 0 3px 10px #555;
   border: 0;
-  font-size: 24px;
-  background: rgba(0, 0, 0, 0.3); }
+  font-size: 24px; }
+
+.img-bg.active, .img-bg.activated {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../img/bg_pizza.png"); }
+
+.img-bg {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../img/bg_pizza.png");
+  background-position: center;
+  background-repeat: no-repeat; }

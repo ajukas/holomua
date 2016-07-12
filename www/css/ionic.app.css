@@ -9866,6 +9866,18 @@ a.button {
   border: 0;
   font-size: 24px; }
 
+.label-text-bottom {
+  font-size: 14px;
+  margin-top: -20px; }
+
+.text-align-right {
+  float: right;
+  margin-right: 5px; }
+
+.text-align-left {
+  float: left;
+  margin-left: 5px; }
+
 .img-bg.active, .img-bg.activated {
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../img/bg_pizza.png"); }
 
@@ -9873,3 +9885,14 @@ a.button {
   background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../img/bg_pizza.png");
   background-position: center;
   background-repeat: no-repeat; }
+
+.ic-bg svg {
+  margin-top: 31.42857px;
+  fill: #fff !important;
+  width: 50px;
+  height: 50px; }
+
+.label-icon-center {
+  /*font-weight: 900;*/
+  display: block;
+  font-size: 24px; }

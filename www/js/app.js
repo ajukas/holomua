@@ -11,7 +11,7 @@ angular.module('holomua', [
   'holomua.common.constants'
 ])
 
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform, $state, $rootScope, $ionicHistory) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -27,6 +27,17 @@ angular.module('holomua', [
       //StatusBar.styleDefault();
     }
   });
+
+  $ionicPlatform.registerBackButtonAction(function(event) {
+    if ($state.current.name === "home" && $rootScope.searching == true) {
+      $rootScope.$broadcast('back-on-searching');
+    } else if ($ionicHistory.backView() !== null) {
+      $ionicHistory.goBack();
+    } else {
+      ionic.Platform.exitApp();
+    }
+  }, 101);
+
 })
 
 .config(function($ionicConfigProvider) {
@@ -50,7 +61,7 @@ angular.module('holomua', [
   })
 
 
-// if none of the above states are matched, use this as the fallback
-$urlRouterProvider.otherwise('/home');
+  // if none of the above states are matched, use this as the fallback
+  $urlRouterProvider.otherwise('/home');
 
 });

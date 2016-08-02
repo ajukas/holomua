@@ -4,100 +4,118 @@
     <label class="item-input-wrapper search">
       <i class="icon ion-search placeholder-icon"></i>
       <input
+      ng-model="keys"
       class="search-text"
-      ng-click="searching = true"
-      ng-blur="searching = false"
+      ng-click="setSearching(true);"
       type="search"
-      placeholder="Encontre lugares: pizzaria imobiliária"/>
+      placeholder="{{searchHint}}"/>
     </label>
+    <button class="button button-clear" ng-show="searching" ng-click="setSearching(false);">
+      voltar
+    </button>
   </div>
-  <ion-content ng-init="init()">
+
+  <ion-content>
     <div style="padding-top: 60px;">
 
-      <div ng-show="!searching">
+      <ion-list ng-show="results.length > 0">
+        <a class="item" ng-repeat="result in results"
+        ng-class="product.history ? 'item-icon-left' : ''"
+        ng-click="itemClicked(result)">
+        <i class="icon ion-clock icon-left-history" ng-show="result.history"></i>
+        <div>{{result.name}}</div>
+      </a>
+    </ion-list>
 
-        <div class="row">
-          <div class="col">
-            <div class="button button-balanced button-metro img-bg">
-              <p class="label-text-center">Pizzaria</p>
-            </div>
-          </div>
 
-        </div>
-        <div class="row ">
-          <div class="col">
-            <div class="button button-calm button-metro" >
-              <div class="ic-bg" ng-include="'img/icons/chaveiro1.svg'">
-              </div>
-              <p class="label-text-bottom">chaveiro</p>
-            </div>
+    <div ng-show="!searching" class="banner">
+      <ion-slides options="options" slider="data.slider">
+        <ion-slide-page ng-repeat="banner in banners">
+          <img ng-src="{{banner.src}}" class="banner-item"></img>
+        </ion-slide-page>
+      </ion-slides>
+      <div class="row">
+        <div class="col">
+          <div class="button button-balanced button-metro img-bg">
+            <p class="label-text-center">Pizzaria</p>
           </div>
+        </div>
 
-          <div class="col">
-            <div class="button button-calm button-metro" >
-              <div class="ic-bg" ng-include="'img/icons/imobiliaria2.svg'">
-              </div>
-              <p class="label-text-bottom">imobiliária</p>
+      </div>
+      <div class="row ">
+        <div class="col">
+          <div class="button button-calm button-metro" >
+            <div class="ic-bg" ng-include="'img/icons/chaveiro1.svg'">
+            </div>
+            <p class="label-text-bottom">chaveiro</p>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="button button-calm button-metro" >
+            <div class="ic-bg" ng-include="'img/icons/imobiliaria2.svg'">
+            </div>
+            <p class="label-text-bottom">imobiliária</p>
+          </div>
+        </div>
+      </div>
+      <div class="row ">
+        <div class="col">
+          <div class="button button-calm button-metro" >
+            <div class="ic-bg" ng-include="'img/icons/whatwhat.svg'">
+            </div>
+            <p class="label-text-bottom text-align-left">left</p>
+          </div>
+        </div>
+        <div class="col">
+          <div class="button button-calm button-metro" >
+            <div class="ic-bg" ng-include="'img/icons/whatwhat.svg'">
+            </div>
+            <p class="label-text-bottom text-align-right">right</p>
+          </div>
+        </div>
+      </div>
+      <div class="row ">
+        <div class="col">
+          <div class="button button-positive button-metro" >
+            <div class="ic-bg" ng-include="'img/icons/whatwhat.svg'">
             </div>
           </div>
         </div>
-        <div class="row ">
-          <div class="col">
-            <div class="button button-calm button-metro" >
-              <div class="ic-bg" ng-include="'img/icons/whatwhat.svg'">
-              </div>
-              <p class="label-text-bottom text-align-left">left</p>
-            </div>
-          </div>
-          <div class="col">
-            <div class="button button-calm button-metro" >
-              <div class="ic-bg" ng-include="'img/icons/whatwhat.svg'">
-              </div>
-              <p class="label-text-bottom text-align-right">right</p>
+        <div class="col">
+          <div class="button button-positive button-metro" >
+            <div class="ic-bg" ng-include="'img/icons/whatwhat.svg'">
             </div>
           </div>
         </div>
-        <div class="row ">
-          <div class="col">
-            <div class="button button-positive button-metro" >
-              <div class="ic-bg" ng-include="'img/icons/whatwhat.svg'">
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="button button-positive button-metro" >
-              <div class="ic-bg" ng-include="'img/icons/whatwhat.svg'">
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="button button-positive button-metro" >
-              <div class="ic-bg" ng-include="'img/icons/whatwhat.svg'">
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row ">
-          <div class="col">
-            <div class="button button-positive button-metro" >
-              <div class="ic-bg" ng-include="'img/icons/whatwhat.svg'">
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="button button-positive button-metro" >
-              <div class="ic-bg" ng-include="'img/icons/whatwhat.svg'">
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="button button-positive button-metro" >
-              <div class="ic-bg" ng-include="'img/icons/whatwhat.svg'">
-              </div>
+        <div class="col">
+          <div class="button button-positive button-metro" >
+            <div class="ic-bg" ng-include="'img/icons/whatwhat.svg'">
             </div>
           </div>
         </div>
       </div>
+      <div class="row ">
+        <div class="col">
+          <div class="button button-positive button-metro" >
+            <div class="ic-bg" ng-include="'img/icons/whatwhat.svg'">
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="button button-positive button-metro" >
+            <div class="ic-bg" ng-include="'img/icons/whatwhat.svg'">
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="button button-positive button-metro" >
+            <div class="ic-bg" ng-include="'img/icons/whatwhat.svg'">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-    </ion-content>
-  </ion-view>
+  </ion-content>
+</ion-view>

@@ -10,7 +10,7 @@
       type="search"
       placeholder="{{searchHint}}"/>
     </label>
-    <button class="button button-clear" ng-show="searching" ng-click="setSearching(false);">
+    <button class="button button-clear" ng-show="searching" ng-click="setSearching(false);" style="font-weight: 700">
       voltar
     </button>
   </div>
@@ -34,17 +34,17 @@
           <img ng-src="{{banner.src}}" class="banner-item"></img>
         </ion-slide-page>
       </ion-slides>
-      <div class="row">
+      <!--<div class="row">
         <div class="col">
           <div class="button button-balanced button-metro img-bg">
             <p class="label-text-center">Pizzaria</p>
           </div>
         </div>
 
-      </div>
+      </div>-->
       <div class="row ">
         <div class="col">
-          <div class="button button-calm button-metro" >
+          <div class="button button-calm button-metro" ui-sref="list({category: 'chaveiro'})">
             <div class="ic-bg" ng-include="'img/icons/chaveiro1.svg'">
             </div>
             <p class="label-text-bottom">chaveiro</p>

@@ -21,6 +21,7 @@
   border-radius: 1px !important;
   min-height: $button-size;
   max-height: $button-size;
+  font-weight: 700;
   width: 100%;
 }
 
@@ -129,4 +130,8 @@
   fill: #8B7C92;
   color: #fff !important;
   font-size: 16px;
+}
+
+.button .icon {
+  vertical-align: text-top;
 }

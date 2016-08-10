@@ -44,6 +44,9 @@ angular.module('holomua', [
 
 .config(function($ionicConfigProvider) {
   $ionicConfigProvider.scrolling.jsScrolling(false);
+  $ionicConfigProvider.backButton.previousTitleText(false);
+  $ionicConfigProvider.backButton.icon('ion-chevron-left');
+  $ionicConfigProvider.backButton.text('')
 })
 
 .config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
@@ -62,6 +65,11 @@ angular.module('holomua', [
     controller: 'PlacesCtrl'
   })
 
+  .state('list', {
+    url: '/list/:category',
+    templateUrl: 'templates/list.html',
+    controller: 'ListCtrl'
+  })
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/home');

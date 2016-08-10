@@ -6,4 +6,9 @@ angular.module('holomua.common.constants', [])
   })
   .constant("PlacesConstants", {
     SEARCH_RADIUS: 5000,
+    PLACE_ID: 'santa_fe_do_sul_sp',
+    SOURCE_ID: 'listao'
+  })
+  .constant("ExternalAPI", {
+    ADDRESS: "http://localhost:9000/api",
   });

@@ -8,10 +8,11 @@ angular.module('holomua', [
   'ngCordova',
   'holomua.controllers',
   'holomua.services',
-  'holomua.common.constants'
+  'holomua.common.constants',
+  'ngStorage'
 ])
 
-.run(function($ionicPlatform, $state, $rootScope, $ionicHistory) {
+.run(function($ionicPlatform, $state, $rootScope, $ionicHistory, PlacesService) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -26,6 +27,7 @@ angular.module('holomua', [
       StatusBar.backgroundColorByHexString("#8B7C92");
       //StatusBar.styleDefault();
     }
+    PlacesService.get();
   });
 
   $ionicPlatform.registerBackButtonAction(function(event) {
